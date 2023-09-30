@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
-    <h1>Descrivint a Kurt Cagle</h1>
-    <h2>Les dades de Kurt son:</h2>
 </head>
 <body>
+    <h1>Descrivint a Kurt Cagle</h1>
+    <h2>Les dades de Kurt son:</h2>
     <ul>
     <?php 
     $name = 'Kurt';
     $surname = 'Cagle';
     $age = '40';
-    $date = '1983-05-12';
-    $boolean1 = '654332211';
-    $boolean2 = '933332211';
+    $data_naixement = date_create();
+    date_date_set($data_naixement, 1983, 05, 12);
+    $telefon = array("65434566", "933332211");
     $adress = 'Carrer de turin, 15';
     $email = 'kurt.cagle@example.com';
-    $job = 'Si';
+    $job = TRUE;
     $height = '1,67';
     ?>
     <div>
@@ -37,16 +37,13 @@
      </li>
      <li>
      <div>
-        <?php 
-        echo "Va neixer al any:";
-        ?>
-        <b>1983-05-12</b> 
+      Va neixer l'any: <strong><?php echo $data_naixement->format('Y/m/d') ?></strong>
      </div>
     </li>
     <li>
      <div>
         <?php 
-        echo "Els seus telèfóns son: $boolean1 - $boolean2";
+        echo "Els seus telèfóns son: $telefon[0] - $telefon[1]";
         ?> 
      </div>
     </li>
@@ -65,9 +62,9 @@
      </div>
     </li>
     <li>
-     <div>
+     <div>Treballa:
         <?php 
-        echo "Treballa: $job";
+         echo $job ? 'Si' : 'No'; 
         ?> 
      </div>
     </li>
